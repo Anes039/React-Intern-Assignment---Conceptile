@@ -1,0 +1,12 @@
+.fields  {
+    font-weight:bold;
+}
+.courses li {
+    list-style-type:none;
+}
+.institutions li {
+    list-style-type:none;
+}
+.courses{
+    padding-top:1rem;
+}

@@ -1,0 +1,10 @@
+.container{
+    display:flex;
+    gap:1rem;
+    padding-top:1.5rem;
+}
+.btn{
+    color:#FFFFFF;
+    background:#007BFF;
+    border-radius:1rem;
+}

@@ -1,0 +1,17 @@
+
+.institutions{
+    display:flex;
+    margin-top:1rem;
+    justify-content: space-between;
+}
+.add_btn >> button{
+    max-width:35%;
+    margin-top:1rem;
+}
+.courses{
+    margin-top:1rem;
+    display:flex;
+}
+.courses input {
+    width:20%;
+}
