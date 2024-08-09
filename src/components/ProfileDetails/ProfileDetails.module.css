@@ -5,9 +5,9 @@
     list-style-type:none;
 }
 .title {
-    position: relative;
-    bottom:5.8rem;
-    display:flex;
+    position: absolute;
+    top:0;
+    
 }
 .courses li {
     list-style-type:none;

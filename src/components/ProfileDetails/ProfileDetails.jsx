@@ -1,20 +1,29 @@
 import classes from  './ProfileDetails.module.css';
 import EditPageButton from '../EditPageButton/EditPageButton';
 import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect,useState } from 'react';
+
 
 const ProfileDetails = () => {
-
-  //fetch('/').then(response => response.json()).then(data => console.log(data));
-  let userData = useSelector((state) => state.studentData);
-  console.log(userData)
-  userData = Array.isArray(userData) ? userData : [];
-  let data = userData.map((item, id) => (
+  const [data,setData] = useState([]);
+  useEffect(() => {
+    fetch('http://localhost:3000/edit').then((response => response.json())).then(data => setData(data.data))
+  },
+ []
+)
+  
+  //let userData = useSelector((state) => state.studentData);
+  
+  //console.log(userData)
+  //userData = Array.isArray(userData) ? userData : [];
+  let user = data.map((item, id) => (
     <div key={id}>
+     
       <p>Your name :<span className={classes.fields}>{item.name} </span></p>
       <p>Your age : <span className={classes.fields}>{item.age} </span></p>
       <p>Your email : <span className={classes.fields}>{item.email} </span></p>
       <p>Your phone number :<span className={classes.fields}>{item.number } </span></p>
+      
       <div className={classes.institutions}>
         List of Institutions :
          <li >Instution name:<span className={classes.fields}>{item.institutions.name} </span></li>
@@ -36,6 +45,6 @@ const ProfileDetails = () => {
             <EditPageButton/>
           
         </div>
-    {data}</div>;
+    {user}</div>;
 };
 export default ProfileDetails;

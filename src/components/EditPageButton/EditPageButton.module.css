@@ -1,7 +1,7 @@
 .btn {
-    position: relative;
-    top:34%;
-    left:280%;
+        position: relative;
+        bottom: 5rem;
+        left: 100%;
     color:#FFFFFF;
     background:#007BFF;
 }

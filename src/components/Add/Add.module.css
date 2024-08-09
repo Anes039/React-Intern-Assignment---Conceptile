@@ -1,8 +1,11 @@
 
 .institutions{
-    display:flex;
+   
     margin-top:1rem;
-    justify-content: space-between;
+    gap:1rem;
+}
+.institutions input {
+    flex:1;
 }
 .add_btn >> button{
     max-width:35%;
@@ -10,8 +13,44 @@
 }
 .courses{
     margin-top:1rem;
-    display:flex;
+    gap:1rem;
+}
+
+input {
+    inset:0;
+    outline:none;
 }
 .courses input {
-    width:20%;
+    flex:1;
+}
+.courses label {
+    padding-right:0.6rem;
+}
+
+.personal_info {
+    display:grid;
+    gap:1rem;
+}
+.personal_info label {
+   
+}
+label {
+    width:50%;
+    display: -webkit-box;
+    text-wrap:nowrap;
+    font-weight:bold;
+}
+.form p {
+    font-weight:bold;
+    font-size:1.5rem;
+}
+.btn_container {
+    display:grid;
+    padding-top:1rem;
+}
+.btn_container > button {
+    outline:none;
+}
+.btn_container  > button::hover{
+    outline:none;
 }

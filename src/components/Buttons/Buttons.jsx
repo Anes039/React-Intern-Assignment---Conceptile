@@ -9,7 +9,7 @@ const Buttons = ({ id }) => {
     const [show, setShow] = useState(false);
     const dispatch = useDispatch();
 
-    const firstAction = () => setShow(!show); // Define as a function
+    const firstAction = () => setShow(!show) ;
     const secondAction = () => dispatch(editData(id));
     const thirdAction = () => dispatch(removeData(id));
 
@@ -32,12 +32,12 @@ const Buttons = ({ id }) => {
         
         <div className={classes.container}>
             {!show ? (
-                dummy.map((btn, idx) => (
-                    <button onClick={btn.action} className={classes.btn} key={idx}>
+                dummy.map((btn, id) => (
+                    <button onClick={btn.action} className={classes.btn} key={id}>
                         {btn.text}
                     </button>
                 )))
-             : ( <Add /> )  }
+             : ( <Add  /> )  }
            
           
         </div>
