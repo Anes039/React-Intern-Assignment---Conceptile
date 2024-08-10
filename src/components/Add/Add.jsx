@@ -152,7 +152,7 @@ const Add = ({ id }) => {
             <button
               type="button"
               onClick={() => setVisible(false)}
-              style={{ color: "white", background: "black", width: '100%' }}
+              style={{ color: "white", background: "black", }}
             >
               Cancel
             </button>

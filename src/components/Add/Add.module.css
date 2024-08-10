@@ -35,7 +35,11 @@ input {
    
 }
 label {
-    width:50%;
+    width: 50%;
+    position: relative;
+    top: 1.5rem;
+    right: 25%;
+
     display: -webkit-box;
     text-wrap:nowrap;
     font-weight:bold;
@@ -45,8 +49,12 @@ label {
     font-size:1.5rem;
 }
 .btn_container {
-    display:grid;
-    padding-top:1rem;
+    display: grid;
+    padding-top: 1rem;
+    margin: auto;
+    align-items: center;
+    align-content: baseline;
+    justify-content: center;
 }
 .btn_container > button {
     outline:none;

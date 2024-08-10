@@ -1,45 +1,44 @@
 import classes from './Buttons.module.css';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { removeData, addData, editData } from '../Features/dataSlice';
+import { removeData, editData } from '../Features/dataSlice';
 import { useState } from 'react';
 import Add from '../Add/Add';
 
 const Buttons = ({ id }) => {
-    const [show, setShow] = useState(false);
+    const [showAddForm, setShowAddForm] = useState(false);
     const dispatch = useDispatch();
 
-    const firstAction = () => setShow(!show) ;
-    const secondAction = () => dispatch(editData(id));
-    const thirdAction = () => dispatch(removeData(id));
+    const handleAddClick = () => setShowAddForm(!showAddForm);
+    const handleEditClick = () => dispatch(editData(id));
+    const handleRemoveClick = () => {
+        dispatch(removeData(id));
+        setShowAddForm(false);
+    };
 
-    const dummy = [
+    const buttons = [
         {
             text: 'Add',
-            action: firstAction,
+            action: handleAddClick,
         },
         {
             text: 'Remove',
-            action: thirdAction,
+            action: handleRemoveClick,
         },
         {
             text: 'Edit',
-            action: secondAction,
+            action: handleEditClick,
         },
     ];
 
     return (
-        
         <div className={classes.container}>
-            {!show ? (
-                dummy.map((btn, id) => (
-                    <button onClick={btn.action} className={classes.btn} key={id}>
-                        {btn.text}
-                    </button>
-                )))
-             : ( <Add  /> )  }
-           
-          
+            {buttons.map((btn, index) => (
+                <button onClick={btn.action} className={classes.btn} key={index}>
+                    {btn.text}
+                </button>
+            ))}
+            {showAddForm && <Add />}
         </div>
     );
 };
